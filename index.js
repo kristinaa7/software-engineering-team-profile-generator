@@ -1,14 +1,15 @@
 //user needs to install node version 16 and inquirer package by typing npm install in the terminal to work
 const inquirer = require('inquirer')
 const fs = require('fs')
+const generateMarkdown = require('./generateMarkdown')
 
-//variables for each team member
+//position classes are imported
 const Manager = require('./Manager')
 const Employee = require('./Employee')
 const Engineer = require('./Engineer')
 const Intern = require('./Intern')
 
-const prompts = [
+const questions = [
     {
         type: 'input',
         message: "What is the team manager's name?",
@@ -30,11 +31,11 @@ const prompts = [
         name: 'managerOffice',
     },
     {
-        type: 'input',
+        type: 'list',
         message: "What type of team member would you like to add?",
         choices: ["Engineer", "Intern", "I don't want to add any more team members"],
         default: 'Engineer',
-        name: 'position1',
+        name: 'employeeType',
     },
     {
         type: 'input',
@@ -64,6 +65,10 @@ const prompts = [
         default: 'Engineer',
     },
 ]
+
+const HTML = generateMarkdown(data);
+fs.writeFileSync("team-profile.html", HTML, (err) => {})
+
 
 //loop for 
 

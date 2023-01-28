@@ -3,27 +3,31 @@ const inquirer = require('inquirer')
 const fs = require('fs')
 
 //variables for each team member
+const Manager = require('./Manager')
+const Employee = require('./Employee')
+const Engineer = require('./Engineer')
+const Intern = require('./Intern')
 
 const prompts = [
     {
         type: 'input',
         message: "What is the team manager's name?",
-        name: 'name',
+        name: 'managerName',
     },
     {
         type: 'input',
         message: "What is the team manager's id?",
-        name: 'id',
+        name: 'managerId',
     },
     {
         type: 'input',
         message: "What is the team manager's email?",
-        name: 'email',
+        name: 'managerEmail',
     },
     {
         type: 'input',
         message: "What is the team manager's office number?",
-        name: 'officenumber',
+        name: 'managerOffice',
     },
     {
         type: 'input',
@@ -60,4 +64,6 @@ const prompts = [
         default: 'Engineer',
     },
 ]
+
+//loop for 
 

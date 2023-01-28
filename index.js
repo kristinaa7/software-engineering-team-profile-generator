@@ -5,9 +5,11 @@ const generateMarkdown = require('./generateMarkdown')
 
 //position classes are imported
 const Manager = require('./Manager')
-const Employee = require('./Employee')
 const Engineer = require('./Engineer')
 const Intern = require('./Intern')
+
+//Array for answers to questions
+const Employee = [];
 
 const questions = [
     {

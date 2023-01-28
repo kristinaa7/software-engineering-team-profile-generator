@@ -10,6 +10,7 @@ In the integrated terminal, please type '''npm install''' to install the the Inq
 ## Packages Needed
 Inquirer verion 8.2.4 - https://www.npmjs.com/package/inquirer/v/8.2.4
 Jest - https://www.npmjs.com/package/jest
+Bootstrap
 
 To submit the assignment:
 

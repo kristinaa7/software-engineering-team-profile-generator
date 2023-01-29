@@ -1,5 +1,5 @@
 const Engineer = require('./lib/Engineer')
-const engineer = new Engineer('Jordan Smith', '123456', 'jordan@gmail.com');
+const engineer = new Engineer('Jordan Smith', '123456', 'jordan@gmail.com', 'jordangit');
 
 describe ('creates an engineer object',() => {
     expect(engineer.name).toEqual('Jordan Smith');

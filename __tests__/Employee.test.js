@@ -1,5 +1,3 @@
-const { default: expect } = require('expect');
-const { describe } = require('yargs');
 const Employee = require('./lib/Employee')
 const employee = new Employee('Riley Smith', '500837', 'riley@gmail.com');
 

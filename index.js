@@ -38,6 +38,7 @@ const managerQuestions = () => {
         name: 'officeNumber',
     },
 ])
+
 .then(answers => {
     const manager = new Manager (answers.name, answers.id, answers.email, answers.officeNumber);
     employee.push(manager)
@@ -79,7 +80,7 @@ const addEngineer = () => {
     {
         type: 'input',
         message: "What is the engineer's ID?",
-        name: 'engineerID',
+        name: 'engineerId',
     },
     {
         type: 'input',
@@ -95,7 +96,7 @@ const addEngineer = () => {
 ])
 
 .then(answers => {
-    const engineer = new Engineer (answers.engineerName, answers.engineerID, answers.engineerEmail, answers.engineerGithub);
+    const engineer = new Engineer (answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
     employee.push(engineer);
     addEmployee();
 })};
@@ -129,3 +130,11 @@ const addIntern = () => {
     employee.push(intern);
     addEmployee();
 })};
+
+const createHTML () {
+    console.log("Yay! You added all members to the team!")
+    fs.writeFileSync(file, data, options)
+}
+
+addEmployee();
+managerQuestions();

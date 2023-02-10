@@ -136,6 +136,7 @@ const addIntern = () => {
 
 function createHTML() {
     console.log("Yay! You added all members to the team!")
+    console.log("employee= ", employee);
     fs.writeFileSync(outputPath, generateMarkdown(employee), "utf-8")
 }
 

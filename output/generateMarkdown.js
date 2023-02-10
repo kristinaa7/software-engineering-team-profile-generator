@@ -1,5 +1,7 @@
-const index = require('../index.js')
 const generateTeam = team => {
+    //make 3 functions for each role
+    //body should 
+    //generate
 
     const generateManager = manager => {
         return `
@@ -28,21 +30,21 @@ const generateTeam = team => {
                   <div class="team-area col-12 d-flex justify-content-center">
                 <div class="card employee-card">
                 <div class="card-header">
-                  <h2 class="card-title">${name}</h2>
+                  <h2 class="card-title">${manager.getName()}</h2>
                   <h3 class="card-title"><i class="fas fa-mug hot mr-2"></i>Manager</h3>
                 </div>
                 <div class="card-body">
                     <ul class="list-group">
-                        <li class="list-group-item">ID: ${id} </li>
-                        <li class="list-group-item">Email: ${email}<a href="mailto:"></a></li>
-                        <li class="list-group-item">Office Number: ${officeNumber}</li>
+                        <li class="list-group-item">ID: ${manager.getId()} </li>
+                        <li class="list-group-item">Email: ${manager.getEmail()}<a href="mailto:"></a></li>
+                        <li class="list-group-item">Office Number: ${manager.getofficeNumber()}</li>
                     </ul>
                 </div>
             </div>
         
             <div class="card employee-card">
         <div class="card-header">
-            <h2 class="card-title">${engineerName}</h2>
+            <h2 class="card-title">${engineer.getName}</h2>
             <h3 class="card-title"><i class="fas fa-user-graduate mr-2"></i>Engineer</h3>
         </div>
         <div class="card-body">
@@ -76,6 +78,20 @@ const generateTeam = team => {
         </html>
         `
     }
+    let teamHTML = [];
+    teamHTML.push(team
+    .filter(mgr => mgr.getRole() === "Manager")
+    .map(mgr => generateManager(mgr)));
+
+    teamHTML.push(team
+    .filter(eng => eng.getRole() === "Engineer")
+    .map(eng => generateEngineer(eng)));
+
+    teamHTML.push(team
+    .filter(int => int.getRole() === "Intern")
+    .map(int => generateIntern(int)));
+
+    return teamHTML.join("");
 }
 
 module.exports = generateTeam;

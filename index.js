@@ -1,7 +1,9 @@
 //user needs to install node version 16 and inquirer package by typing npm install in the terminal to work
 const inquirer = require('inquirer')
 const fs = require('fs')
-const generateMarkdown = require('./src/generateMarkdown')
+const generateMarkdown = require('./output/generateMarkdown')
+const OUTPUT_DIR = path.resolve(__dirname, "output")
+const outputPath = path.join(OUTPUT_DIR, "team.html")
 
 //position classes are imported
 const Manager = require('./lib/Manager')
@@ -131,9 +133,9 @@ const addIntern = () => {
     addEmployee();
 })};
 
-const createHTML () {
+function createHTML() {
     console.log("Yay! You added all members to the team!")
-    fs.writeFileSync(file, data, options)
+    fs.writeFileSync(outputPath, generateMarkdown(employee), "utf-8")
 }
 
 addEmployee();

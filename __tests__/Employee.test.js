@@ -1,10 +1,10 @@
-const Employee = require('./lib/Employee')
+const Employee = require('../lib/Employee')
 const employee = new Employee('Riley Smith', '500837', 'riley@gmail.com');
 
 describe ('creates an employee object',() => {
-    expect(employee.name).toEqual('Riley Smith');
-    expect(employee.id).toEqual('500837');
-    expect(employee.email).toEqual('riley@gmail.com');
+    expect(employee.name).toBe('Riley Smith');
+    expect(employee.id).toBe('500837');
+    expect(employee.email).toBe('riley@gmail.com');
 });
 
 describe('return employee name',() => {

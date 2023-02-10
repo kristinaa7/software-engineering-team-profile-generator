@@ -1,17 +1,18 @@
-const Engineer = require('./lib/Engineer')
+const { test } = require('picomatch');
+const Engineer = require('../lib/Engineer')
 const engineer = new Engineer('Jordan Smith', '123456', 'jordan@gmail.com', 'jordangit');
 
-describe ('creates an engineer object',() => {
-    expect(engineer.name).toEqual('Jordan Smith');
-    expect(engineer.id).toEqual('123456');
-    expect(engineer.email).toEqual('jordan@gmail.com');
-    expect(engineer.github).toEqual('jordangit');
+test ('creates an engineer object',() => {
+    expect(engineer.getName()).toBe('Jordan Smith');
+    expect(engineer.getId()).toBe('123456');
+    expect(engineer.getEmail()).toBe('jordan@gmail.com');
+    expect(engineer.getGithub()).toBe('jordangit');
 });
 
-describe('return engineer github',() => {
+test ('return engineer github',() => {
     expect(engineer.getGithub()).toEqual(expect.stringContaining('jordangit'));
 });
 
-describe('return engineer role',() => {
+test ('return engineer role',() => {
     expect(engineer.getRole()).toEqual(expect.stringContaining('Engineer'));
 });

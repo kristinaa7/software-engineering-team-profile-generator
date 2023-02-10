@@ -1,6 +1,7 @@
 //user needs to install node version 16 and inquirer package by typing npm install in the terminal to work
 const inquirer = require('inquirer')
 const fs = require('fs')
+const path = require('path')
 const generateMarkdown = require('./output/generateMarkdown')
 const OUTPUT_DIR = path.resolve(__dirname, "output")
 const outputPath = path.join(OUTPUT_DIR, "team.html")
@@ -138,5 +139,4 @@ function createHTML() {
     fs.writeFileSync(outputPath, generateMarkdown(employee), "utf-8")
 }
 
-addEmployee();
 managerQuestions();

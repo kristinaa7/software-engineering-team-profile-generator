@@ -1,4 +1,4 @@
-const index = require('./index.js')
+const index = require('../index.js')
 const generateTeam = team => {
 
     const generateManager = manager => {
@@ -78,4 +78,4 @@ const generateTeam = team => {
     }
 }
 
-module.exports = team;
+module.exports = generateTeam;

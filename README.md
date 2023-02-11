@@ -5,11 +5,12 @@ I have created a Node.js command-line application that takes in information abou
 The goal of this assignment is to practice writing unit tests and testing code to ensure it passes all of them
 
 ## Usage
-In the integrated terminal, please type '''npm install''' to install the the Inquirer package on your local device. To load the prompt questions, please type '''node index.js'''.
+In the integrated terminal, please type ```npm install``` to install the the Inquirer package on your local device. To load the prompt questions, please type ```node index.js'```. To run the test, please run ```npm run test```
 
 ## Packages Needed
 Inquirer verion 8.2.4 - https://www.npmjs.com/package/inquirer/v/8.2.4
 Jest - https://www.npmjs.com/package/jest
+(added Jest in package.json under script tests)
 Bootstrap
 
 To submit the assignment:

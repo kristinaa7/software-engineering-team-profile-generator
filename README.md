@@ -20,4 +20,4 @@ In the integrated terminal, please type ```npm install``` to install the the Inq
 * Tutor Andrew Hardemon
 
 ## Video Walkthrough Link 
-
+https://drive.google.com/file/d/1JoDc38IhF3S6A0aH-seb-AJvxruW43O9/view 

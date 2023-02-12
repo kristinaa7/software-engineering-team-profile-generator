@@ -1,5 +1,7 @@
 //user needs to install node version 16 and inquirer package by typing npm install in the terminal to work
 const inquirer = require('inquirer')
+
+//import the filesystem module
 const fs = require('fs')
 const path = require('path')
 const generateMarkdown = require('./output/generateMarkdown')
@@ -11,9 +13,10 @@ const Manager = require('./lib/Manager')
 const Engineer = require('./lib/Engineer')
 const Intern = require('./lib/Intern')
 
-//Array for answers to questions
+//Empty array for answers to questions
 const employee = [];
 
+//Prompts to obtain manager information
 const managerQuestions = () => {
     inquirer.prompt ([
     {
@@ -48,6 +51,7 @@ const managerQuestions = () => {
     addEmployee();
 })};
 
+//Prompts to obtain what roles are remaining on the team
 const addEmployee = () => {
     inquirer.prompt([
     {
@@ -73,6 +77,7 @@ const addEmployee = () => {
 })
 };
 
+//Prompts to obtain engineer information
 const addEngineer = () => {
    inquirer.prompt([
     {
@@ -104,6 +109,7 @@ const addEngineer = () => {
     addEmployee();
 })};
 
+//Prompts to obtain intern information
 const addIntern = () => {
     inquirer.prompt([
     {
@@ -134,10 +140,11 @@ const addIntern = () => {
     addEmployee();
 })};
 
+//creates a new file
 function createHTML() {
     console.log("Yay! You added all members to the team!")
-    console.log("employee= ", employee);
     fs.writeFileSync(outputPath, generateMarkdown(employee), "utf-8")
-}
+};
 
+//calls the function to begin the prompts
 managerQuestions();

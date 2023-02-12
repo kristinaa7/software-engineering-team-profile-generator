@@ -1,8 +1,7 @@
+//variables defining the entire team and setting team as the object that will be used later on to output the html page
 const generateTeam = team => {
-    //make 3 functions for each role
-    //body should 
-    //generate
 
+//variable defining manager and the function to pull user prompt info into an employee card for manager
     const generateManager = manager => {
         return `
     <div class="card employee-card">
@@ -20,6 +19,7 @@ const generateTeam = team => {
     </div>
     `};
 
+//variable defining engineer and the function to pull user prompt info into an employee card for engineer
     const generateEngineer = engineer => {
         return `
     <div class="card employee-card">
@@ -37,6 +37,7 @@ const generateTeam = team => {
         </div>
     `};
 
+    //variable defining intern and the function to pull user prompt info into an employee card for intern
     const generateIntern = intern => {
         return `
     <div class="card employee-card">
@@ -53,9 +54,14 @@ const generateTeam = team => {
         </div>
     </div>
     `};
-
+    
+    //empty array that will join all the code together
     let teamHTML = [];
 
+    //filter returns only the elements from the array with the specified criteria 
+    //push adds one or more elements to the end of an array
+    //map retuns the new array with the changes of data items
+    //source for push and array -> https://codeburst.io/map-filter-and-reduce-in-javascript-d2725c59571d
     teamHTML.push(team
     .filter(mgr => mgr.getRole() === "Manager")
     .map(mgr => generateManager(mgr)));
@@ -71,6 +77,7 @@ const generateTeam = team => {
     return teamHTML.join("");
 };
 
+//exports the entire html page with the entire team and their information
 module.exports = generateTeam => {
     return `
     <!DOCTYPE html>

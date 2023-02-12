@@ -78,7 +78,7 @@ const generateTeam = team => {
 };
 
 //exports the entire html page with the entire team and their information
-module.exports = generateTeam => {
+module.exports = templateData => {
     return `
     <!DOCTYPE html>
     <html lang="en">
@@ -102,7 +102,7 @@ module.exports = generateTeam => {
         <div class="container-fluid text-center">
             <div class="row">
               <div class="team-area col-12 d-flex">
-              ${generateTeam(team)}
+              ${generateTeam(templateData)}
               </div>
             </div>
           </div>
